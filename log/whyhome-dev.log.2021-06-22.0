@@ -1,0 +1,32 @@
+2021-06-22 22:14:39.921  INFO 17656 --- [restartedMain] com.tsp.BackEndApplication               : Starting BackEndApplication on DESKTOP-WHY with PID 17656 (G:\系统桌面\中车\git\tcnopen-tsp-visualization\target\classes started by zero in G:\系统桌面\中车\git\tcnopen-tsp-visualization)
+2021-06-22 22:14:39.943  INFO 17656 --- [restartedMain] com.tsp.BackEndApplication               : The following profiles are active: dev
+2021-06-22 22:14:40.084  INFO 17656 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-06-22 22:14:40.085  INFO 17656 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-06-22 22:14:44.468  INFO 17656 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-06-22 22:14:44.488  INFO 17656 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-22 22:14:44.491  INFO 17656 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2021-06-22 22:14:45.253  INFO 17656 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-06-22 22:14:45.253  INFO 17656 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5167 ms
+2021-06-22 22:14:45.849  INFO 17656 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-22 22:14:46.281  INFO 17656 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-06-22 22:14:46.393  INFO 17656 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-06-22 22:14:46.396  INFO 17656 --- [restartedMain] com.tsp.BackEndApplication               : Started BackEndApplication in 7.337 seconds (JVM running for 11.857)
+2021-06-22 22:14:57.149  INFO 17656 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-22 22:14:57.149  INFO 17656 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-06-22 22:14:57.156  INFO 17656 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2021-06-22 22:18:53.499  INFO 18888 --- [restartedMain] com.tsp.BackEndApplication               : Starting BackEndApplication on DESKTOP-WHY with PID 18888 (G:\系统桌面\中车\git\tcnopen-tsp-visualization\target\classes started by zero in G:\系统桌面\中车\git\tcnopen-tsp-visualization)
+2021-06-22 22:18:53.502  INFO 18888 --- [restartedMain] com.tsp.BackEndApplication               : The following profiles are active: dev
+2021-06-22 22:18:53.718  INFO 18888 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-06-22 22:18:53.718  INFO 18888 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-06-22 22:18:55.064  INFO 18888 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-06-22 22:18:55.071  INFO 18888 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-06-22 22:18:55.071  INFO 18888 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2021-06-22 22:18:55.216  INFO 18888 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-06-22 22:18:55.216  INFO 18888 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1497 ms
+2021-06-22 22:18:55.423  INFO 18888 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-06-22 22:18:55.668  INFO 18888 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-06-22 22:18:55.780  INFO 18888 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-06-22 22:18:55.784  INFO 18888 --- [restartedMain] com.tsp.BackEndApplication               : Started BackEndApplication in 3.194 seconds (JVM running for 4.91)
+2021-06-22 22:18:57.664  INFO 18888 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-06-22 22:18:57.664  INFO 18888 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-06-22 22:18:57.670  INFO 18888 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms

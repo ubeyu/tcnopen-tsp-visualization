@@ -1,0 +1,346 @@
+.m-background{
+    background: url("../images/background_1.jpg")!important;
+}
+/*------width---------*/
+.m-width-mini{
+    width: 70% !important;
+}
+
+/*------padded对内间隔---------*/
+.m-padded-mini{
+    padding: 0.3em !important;
+}
+.m-padded-ori{
+    padding: 1em !important;
+}
+.m-padded-tb-mini{
+    padding-top: 0.1em !important;
+    padding-bottom: 0.1em !important;
+}
+.m-padded-tb-tiny{/*smaller*/
+    padding-top: 0.4em !important;
+    padding-bottom: 0.4em !important;
+}
+.m-padded-tb-small{
+    padding-top: 0.6em !important;
+    padding-bottom: 0.6em !important;
+}
+.m-padded-tb-ori{
+    padding-top: 1em !important;
+    padding-bottom: 1em !important;
+}
+.m-padded-tb-medium{/*middle*/
+    padding-top: 2em !important;
+    padding-bottom: 2em !important;
+}
+.m-padded-tb-large{/*mid*/
+    padding-top: 3em !important;
+    padding-bottom: 3em !important;
+}
+.m-padded-tb-massive{
+    padding-top: 6em !important;
+    padding-bottom: 6em !important;
+}
+.m-padded-tb-message-massive{
+    padding-top: 13em !important;
+    padding-bottom: 14em !important;
+}
+.m-padded-lr-ori{
+    padding-left: 1em !important;
+    padding-right: 1em !important;
+}
+.m-padded-lr-small{
+    padding-left: 4em !important;
+    padding-right: 4em !important;
+}
+.m-padded-lr-responsive{
+    padding-left: 4em !important;
+    padding-right: 4em !important;
+}
+.m-padded-lr-types-responsive{
+    padding-left: 2em !important;
+    padding-right: 2em !important;
+}
+
+/*------margin对外间隔---------*/
+.m-margin-tb-mini{
+    margin-top: 0.3em !important;
+    margin-bottom: 0.3em !important;
+}
+.m-margin-b-tiny{
+    margin-bottom: 0.5em !important;
+}
+.m-margin-lr-tiny{
+    margin-left: 0.5em !important;
+    margin-right: 0.5em !important;
+}
+.m-margin-tb-large{
+    margin-top: 3em !important;
+    margin-bottom: 3em !important;
+}
+.m-margin-tb-massive{
+    margin-top: 10em !important;
+    margin-bottom: 10em !important;
+}
+
+
+/*---------text----------*/
+    /*----导航--*/
+.m-text-font{
+    font-weight: 900;color: #FFFFFF;font-size: 12pt;padding: 0px 10px !important;
+
+}
+    /*----介绍页内容文本格式--*/
+.m-text-article{
+    font-weight: 400 !important;
+    letter-spacing:0.8px !important;
+    line-height: 1.8;
+}
+   /*----框标题格式--*/
+.m-text-title-thin{
+    font-weight: 600 !important;
+    font-size:0.8em !important;
+}
+/*----框标题格式--*/
+.m-text-title-ori{
+    font-weight: 600 !important;
+    font-size:1.2em !important;
+}
+.m-text-thin{
+    font-weight: 500 !important;
+}
+.m-text-ori{
+    font-weight: 900 !important;
+}
+/*----字间距--*/
+.m-text-spaced{
+    letter-spacing:1.2px !important;
+}
+
+/*---------item----------*/
+.m-item{
+    font-weight: 500 !important;
+    display: block!important;
+}
+
+
+/*---------opacity----------*/
+.m-opacity-tiny{
+    opacity:0.6 !important;
+}
+.m-opacity-small{
+    opacity:0.8 !important;
+}
+
+/*---------display----------*/
+.m-inline-block{
+    display: inline-block !important;
+}
+
+/*------position---------*/
+.bottom_footer {
+    position: absolute !important; /*or前面的是absolute就可以用*/
+    bottom: 0px !important;
+}
+   /*---绝对显示右上角导航----*/
+.m-top-right{
+    position: absolute !important;
+    top:0 !important;
+    right: 0 !important;
+}
+    /*---浮动显示右下角工具栏----*/
+.m-fixed{
+    position: fixed !important;
+    z-index: 1;
+}
+.m-right-bottom{
+    bottom:0 !important;
+    right:0 !important;
+}
+.m-introduction-index{
+    z-index: 1;
+}
+
+/*------container---------*/
+.m-container{
+    max-width:75em !important;
+    margin:auto !important;
+    align-items: center!important;
+}
+.m-container-login{
+    max-width:30em !important;
+    margin:auto !important;
+}
+.m-container-blog{
+    max-width:80em !important;
+    margin:auto !important;
+}
+.m-container-message{
+    max-width:50em !important;
+    margin:auto !important;
+}
+/*-------shadow---------*/
+.m-shadow-bottom-small{
+    -webkit-box-shadow: 0 8px 16px rgba(0,0,0,0.5) !important;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5) !important;
+}
+.m-shadow-top-small{
+    -webkit-box-shadow: 0 8px 16px rgba(0,0,0,0.5) !important;
+    box-shadow: 0 -8px 16px rgba(0,0,0,0.5) !important;
+}
+
+/*-------color---------*/
+.m-black{
+    color: #333 !important;
+}
+.m-teal{
+    color: #00B5AD !important;
+}
+
+.m-purplebackground {
+    background: rgb(12,123,179);
+    background: -moz-linear-gradient(45deg,  rgba(12,123,179,1) 0%, rgba(127,155,206,1) 48%, rgba(242,186,232,1) 100%) !important;
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(12,123,179,1)), color-stop(48%,rgba(127,155,206,1)), color-stop(100%,rgba(242,186,232,1)))!important;
+    background: -webkit-linear-gradient(45deg,  rgba(12,123,179,1) 0%,rgba(127,155,206,1) 48%,rgba(242,186,232,1) 100%)!important;
+    background: -o-linear-gradient(45deg,  rgba(12,123,179,1) 0%,rgba(127,155,206,1) 48%,rgba(242,186,232,1) 100%)!important;
+    background: -ms-linear-gradient(45deg,  rgba(12,123,179,1) 0%,rgba(127,155,206,1) 48%,rgba(242,186,232,1) 100%)!important;
+    background: linear-gradient(45deg,  rgba(12,123,179,1) 0%,rgba(127,155,206,1) 48%,rgba(242,186,232,1) 100%)!important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0C7BB3', endColorstr='#F2BAE8',GradientType=1 )!important;
+}
+
+.m-pinkbackground {
+    background: rgb(159,165,213);
+    background: -moz-linear-gradient(-45deg, rgba(159,165,213, 1) 0%, rgba(196,205,207, 1) 69%, rgba(232,245,200, 1) 89%) !important;
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(159,165,213, 1)), color-stop(69%, rgba(196,205,207, 1)), color-stop(89%, rgba(232,245,200, 1))) !important;
+    background: -webkit-linear-gradient(-45deg, rgba(159,165,213, 1) 0%, rgba(196,205,207, 1) 69%, rgba(232,245,200, 1) 89%) !important;
+    background: -o-linear-gradient(-45deg, rgba(159,165,213, 1) 0%, rgba(196,205,207, 1) 69%, rgba(232,245,200, 1) 89%) !important;
+    background: -ms-linear-gradient(-45deg, rgba(159,165,213, 1) 0%, rgba(196,205,207, 1) 69%, rgba(232,245,200, 1) 89%) !important;
+    background: linear-gradient(135deg, rgba(159,165,213, 1) 0%, rgba(196,205,207, 1) 69%, rgba(232,245,200, 1) 89%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9FA5D5', endColorstr='#E8F5C8', GradientType=1) !important;
+    border-radius: 0 !important;
+    margin: 0em !important;
+    padding: 1rem 0rem 0 !important;
+}
+
+.m-bluebackground {
+    background: rgb(24, 42, 115);
+    background: -moz-linear-gradient(-45deg, rgba(24, 42, 115, 1) 0%, rgba(33, 138, 174, 1) 69%, rgba(32, 167, 172, 1) 89%) !important;
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(24, 42, 115, 1)), color-stop(69%, rgba(33, 138, 174, 1)), color-stop(89%, rgba(32, 167, 172, 1))) !important;
+    background: -webkit-linear-gradient(-45deg, rgba(24, 42, 115, 1) 0%, rgba(33, 138, 174, 1) 69%, rgba(32, 167, 172, 1) 89%) !important;
+    background: -o-linear-gradient(-45deg, rgba(24, 42, 115, 1) 0%, rgba(33, 138, 174, 1) 69%, rgba(32, 167, 172, 1) 89%) !important;
+    background: -ms-linear-gradient(-45deg, rgba(24, 42, 115, 1) 0%, rgba(33, 138, 174, 1) 69%, rgba(32, 167, 172, 1) 89%) !important;
+    background: linear-gradient(135deg, rgba(24, 42, 115, 1) 0%, rgba(33, 138, 174, 1) 69%, rgba(32, 167, 172, 1) 89%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#182a73', endColorstr='#20a7ac', GradientType=1) !important;
+    border-radius: 0 !important;
+    margin: 0em !important;
+    padding: 1rem 0rem 0 !important;
+}
+
+/*---------Semantic UI-------*/
+.hidden.menu {
+    display: none!important;
+}
+
+.masthead.segment {
+    min-height: 700px!important;
+    padding: 1em 0em!important;
+}
+.masthead-fragment.segment {
+    padding: 1em 0em!important;
+}
+.masthead .ui.menu .ui.button {
+    margin-left: 0.5em!important;
+}
+.masthead h1.ui.header {
+    margin-top: 1em!important;
+    margin-bottom: 0em!important;
+    font-size: 3em!important;
+    font-weight: normal!important;
+}
+.masthead h2 {
+    font-size: 1.5em!important;
+    font-weight: normal!important;
+}
+.masthead div.ui.image {
+    margin-top: 1em!important;
+    margin-bottom: 1em!important;
+}
+
+.ui.vertical.stripe {
+    padding: 8em 0em!important;
+}
+.ui.vertical.stripe h3 {
+    font-size: 2em!important;
+}
+.ui.vertical.stripe .button + h3,
+.ui.vertical.stripe p + h3 {
+    margin-top: 3em!important;
+}
+.ui.vertical.stripe .floated.image {
+    clear: both!important;
+}
+.ui.vertical.stripe p {
+    font-size: 1.33em!important;
+}
+.ui.vertical.stripe .horizontal.divider {
+    margin: 3em 0em!important;
+}
+
+.quote.stripe.segment {
+    padding: 0em!important;
+}
+.quote.stripe.segment .grid .column {
+    padding-top: 5em!important;
+    padding-bottom: 5em!important;
+}
+
+.secondary.menu .toc.item {
+    display: none!important;
+}
+
+
+/*-------PC端---------*/
+.m-pc-hide{
+    display: none !important;
+}
+/*-------手机端---------*/
+@media only screen and (max-width: 991px){
+    .m-mobile-hide{
+        display: none !important;
+    }
+    .m-pc-hide{
+        display: block !important;
+    }
+    .m-padded-lr-responsive{
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .m-padded-lr-types-responsive{
+        padding-left: 1em !important;
+        padding-right: 1em !important;
+    }
+    .m-mobile-wide{
+        width: 100% !important;
+    }
+
+
+    ui.fixed.menu {
+        display: none!important;
+    }
+    .secondary.menu .toc.item {
+        display: block!important;
+    }
+    .masthead.segment {
+        min-height: 400px!important;
+    }
+    .masthead h1.ui.header {
+        margin-bottom: 0em!important;
+        font-weight: normal!important;
+        font-size: 3em!important;
+        margin-top: 1.5em!important;
+    }
+    .masthead h2 {
+        margin-top: 0.5em!important;
+        font-size: 1.5em!important;
+    }
+}

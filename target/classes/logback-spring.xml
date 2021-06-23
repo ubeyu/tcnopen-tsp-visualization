@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+
+    <!--包含SpringBoot对logback的默认配置-->
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+    <property name="LOG_FILE" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}}/spring.log}"/>
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
+
+    <!--重写了SpringBoot框架org/springframework/boot/logging/logback/file-appender.xml 配置-->
+    <appender name="TIME_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+        </encoder>
+        <file>${LOG_FILE}</file>
+        <rollingPolicy
+            class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_FILE}.%d{yyyy-MM-dd}.%i</fileNamePattern>
+        <!--保留历史日志30天-->
+            <maxHistory>30</maxHistory>
+        <!--SpringBoot默认情况下，日志文件为10M时切分，可在下面设置-->
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>50MB</maxFileSize>
+                </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="TIME_FILE" />
+    </root>
+
+</configuration>
+
+<!--beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+</beans-->
+
+        <!--
+            1、继承Spring boot logback设置（可在appliaction.yml或者application.properties中设置logging.*属性）
+            2、重写了默认设置，设置日志大小为50MB时，按日期切分日志，切分后目录为：
+                whyhome.2017-08-01.0   80MB
+                whyhome.2017-08-01.1   10MB
+                whyhome.2017-08-02.0   56MB
+                whyhome.2017-08-03.0   53MB
+                ......
+        -->

@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<!---传入th:replace，取代原有head元素，即添加了th:href="@{/css/me.css}"等相关引用--->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>列车通信网络入侵检测仿真测试平台</title>
+    <!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">-->
+    <!--    &lt;!&ndash;-&#45;&#45;&#45;&#45;(若使用th:replace则不再需要添加)&#45;&#45;格式混乱，css未找到路径，原因是需thymeleaf引入&#45;&#45;th:href="@{/css/me.css}"-&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;-->
+    <!--    <link rel="stylesheet" href="../static/css/me.css" th:href="@{/css/me.css}"> &lt;!&ndash;(若使用th:replace则不再需要添加)th:href="@{/css/me.css}"&ndash;&gt;-->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/me.css"  th:href="@{/css/me.css}">
+    <link rel="stylesheet" href="../static/css/typo.css" th:href="@{/css/typo.css}">
+    <link rel="stylesheet" href="../static/css/animate.css" th:href="@{/css/animate.css}">
+    <link rel="stylesheet" href="../static/lib/prism/prism.css" th:href="@{/lib/prism/prism.css}">
+    <link rel="stylesheet" href="../static/lib/tocbot/tocbot.css" th:href="@{/lib/tocbot/tocbot.css}">
+</head>
+
+<body>
+
+<div class="pusher m-background">
+    <!--导航-->
+    <!---将导航做统一模板，引入th:replace通过参数n区分不同active，此处为首页传入1--->
+    <nav class="ui inverted attached segment m-padded-tb-mini m-shadow-bottom-small">
+        <div class="ui container">
+            <div class="ui inverted secondary stackable menu ">
+                <h2 class="ui teal header item">列车通信网络入侵检测仿真测试平台</h2>
+            </div>
+        </div>
+    </nav>
+
+    <!--中间-->
+    <div class="ui container animated fadeIn m-padded-tb-massive">
+        <div class="ui divided stackable grid">
+
+            <!----左边管理---->
+            <div class="two wide column">
+                <!----左侧控制中心---->
+                <div class="ui segment">
+                    <div class="ui secondary segment">
+                        <h2 class="ui m-text-title-thin header">管理列表</h2>
+                    </div>
+                    <div class="ui tertiary attached segment">
+                        <a href="#" th:href="@{/states}" class="m-black m-text-thin">
+                            运行状态
+                        </a>
+                    </div>
+
+                    <div class="ui attached segment">
+                        <a href="#" th:href="@{/controller}" class="m-black m-text-thin">
+                            设备控制
+                        </a>
+                    </div>
+                    <div class="ui attached segment">
+                        <a href="#" th:href="@{/track}" class="m-black m-text-thin">
+                            攻击注入
+                        </a>
+                    </div>
+                    <div class="ui attached segment">
+                        <a href="#" th:href="@{/detect}" class="m-black m-text-thin">
+                            攻击检测
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <!----右边设备---->
+            <div class="fourteen wide column">
+                <div class="ui segment m-padded-tb-medium">
+                    <div class="ui two column grid">
+                        <div class="column">
+                            <h3 class="ui brown header">仿真平台设备运行状态</h3>
+                        </div>
+                        <div class="right aligned column">
+                            共 <h4 class="ui orange header m-inline-block m-text-ori">7</h4> 个设备
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ui segment">
+                    <div class="ui divided stackable grid">
+                        <div class="five wide column">
+                            <div class="ui red attached segment">
+                                <div class="ui grid">
+                                    <div class="thirteen wide column">
+                                        <h2 class="ui m-text-title-ori header">门控系统状态</h2>
+                                    </div>
+                                    <div class="three wide column">
+                                        <img src="../static/images/door-black.png" th:src="@{/images/door-black.png}" class="ui rounded image" style="width: 20px">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui attached right aligned segment">
+                                <div class="ui grid">
+                                    <div class="six wide column">
+                                    </div>
+                                    <div class="two wide column">
+                                        开
+                                    </div>
+                                    <div class="three wide column">
+                                        <img src="../static/images/door-Green.png" th:src="@{/images/door-Green.png}" class="ui rounded image" style="width: 20px">
+                                    </div>
+                                    <div class="two wide column">
+                                        关
+                                    </div>
+                                    <div class="three wide column">
+                                        <img src="../static/images/door-Red.png" th:src="@{/images/door-Red.png}" class="ui rounded image" style="width: 20px">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!---静态页面显示 动态页面不显示--->
+                            <div class="ui segment">
+                                <div class="ui grid">
+                                    <div class="thirteen wide column">
+                                        <p class="ui right aligned">1 号车厢 1 门</p>
+                                    </div>
+
+                                    <div class="three wide column">
+                                        <div th:switch="${edcustate11}">
+                                            <div th:case="0">
+                                                <img src="../static/images/door-Red.png" th:src="@{/images/door-Red.png}" class="ui image" style="width: 20px">
+                                            </div>
+                                            <div th:case="1">
+                                                <img src="../static/images/door-Green.png" th:src="@{/images/door-Green.png}" class="ui image" style="width: 20px">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="ui segment">
+                                <div class="ui grid">
+                                    <div class="thirteen wide column">
+                                        <p class="ui right aligned">1 号车厢 2 门</p>
+                                    </div>
+                                    <div class="three wide column">
+                                        <div th:switch="${edcustate12}">
+                                            <div th:case="0">
+                                                <img src="../static/images/door-Red.png" th:src="@{/images/door-Red.png}" class="ui image" style="width: 20px">
+                                            </div>
+                                            <div th:case="1">
+                                                <img src="../static/images/door-Green.png" th:src="@{/images/door-Green.png}" class="ui image" style="width: 20px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui segment">
+                                <div class="ui grid">
+                                    <div class="thirteen wide column">
+                                        <p class="ui right aligned">2 号车厢 1 门</p>
+                                    </div>
+                                    <div class="three wide column">
+                                        <div th:switch="${edcustate21}">
+                                            <div th:case="0">
+                                                <img src="../static/images/door-Red.png" th:src="@{/images/door-Red.png}" class="ui image" style="width: 20px">
+                                            </div>
+                                            <div th:case="1">
+                                                <img src="../static/images/door-Green.png" th:src="@{/images/door-Green.png}" class="ui image" style="width: 20px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui segment">
+                                <div class="ui grid">
+                                    <div class="thirteen wide column">
+                                        <p class="ui right aligned">2 号车厢 2 门</p>
+                                    </div>
+                                    <div class="three wide column">
+                                        <div th:switch="${edcustate22}">
+                                            <div th:case="0">
+                                                <img src="../static/images/door-Red.png" th:src="@{/images/door-Red.png}" class="ui image" style="width: 20px">
+                                            </div>
+                                            <div th:case="1">
+                                                <img src="../static/images/door-Green.png" th:src="@{/images/door-Green.png}" class="ui image" style="width: 20px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui segment">
+                                <div class="ui grid">
+                                    <div class="thirteen wide column">
+                                        <p class="ui right aligned">3 号车厢 1 门</p>
+                                    </div>
+                                    <div class="three wide column">
+                                        <div th:switch="${edcustate31}">
+                                            <div th:case="0">
+                                                <img src="../static/images/door-Red.png" th:src="@{/images/door-Red.png}" class="ui image" style="width: 20px">
+                                            </div>
+                                            <div th:case="1">
+                                                <img src="../static/images/door-Green.png" th:src="@{/images/door-Green.png}" class="ui image" style="width: 20px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui segment">
+                                <div class="ui grid">
+                                    <div class="thirteen wide column">
+                                        <p class="ui right aligned">3 号车厢 2 门</p>
+                                    </div>
+                                    <div class="three wide column">
+                                        <div th:switch="${edcustate32}">
+                                            <div th:case="0">
+                                                <img src="../static/images/door-Red.png" th:src="@{/images/door-Red.png}" class="ui image" style="width: 20px">
+                                            </div>
+                                            <div th:case="1">
+                                                <img src="../static/images/door-Green.png" th:src="@{/images/door-Green.png}" class="ui image" style="width: 20px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="five wide column">
+                            <div class="ui red attached segment">
+                                <div class="ui grid">
+                                    <div class="thirteen wide column">
+                                        <h2 class="ui m-text-title-ori header">空调系统状态</h2>
+                                    </div>
+                                    <div class="three wide column">
+                                        <img src="../static/images/air-Black.png" th:src="@{/images/air-Black.png}" class="ui rounded image" style="width: 20px">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui attached right aligned segment">
+                                <div class="ui grid">
+                                    <div class="six wide column">
+                                    </div>
+                                    <div class="two wide column">
+                                        开
+                                    </div>
+                                    <div class="three wide column">
+                                        <img src="../static/images/air-Green.png" th:src="@{/images/air-Green.png}" class="ui rounded image" style="width: 20px">
+                                    </div>
+                                    <div class="two wide column">
+                                        关
+                                    </div>
+                                    <div class="three wide column">
+                                        <img src="../static/images/air-Red.png" th:src="@{/images/air-Red.png}" class="ui rounded image" style="width: 20px">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!---静态页面显示 动态页面不显示--->
+                            <div class="ui segment">
+                                <div class="ui grid">
+                                    <div class="thirteen wide column">
+                                        <p class="ui right aligned">1 号车厢空调</p>
+                                    </div>
+                                    <div class="three wide column">
+                                        <div th:switch="${havcstate1}">
+                                            <div th:case="0">
+                                                <img src="../static/images/door-Red.png" th:src="@{/images/door-Red.png}" class="ui image" style="width: 20px">
+                                            </div>
+                                            <div th:case="1">
+                                                <img src="../static/images/door-Green.png" th:src="@{/images/door-Green.png}" class="ui image" style="width: 20px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui segment">
+                                <div class="ui grid">
+                                    <div class="thirteen wide column">
+                                        <p class="ui right aligned">2 号车厢空调</p>
+                                    </div>
+                                    <div class="three wide column">
+                                        <div th:switch="${havcstate2}">
+                                            <div th:case="0">
+                                                <img src="../static/images/door-Red.png" th:src="@{/images/door-Red.png}" class="ui image" style="width: 20px">
+                                            </div>
+                                            <div th:case="1">
+                                                <img src="../static/images/door-Green.png" th:src="@{/images/door-Green.png}" class="ui image" style="width: 20px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui segment">
+                                <div class="ui grid">
+                                    <div class="thirteen wide column">
+                                        <p class="ui right aligned">3 号车厢空调</p>
+                                    </div>
+                                    <div class="three wide column">
+                                        <div th:switch="${havcstate3}">
+                                            <div th:case="0">
+                                                <img src="../static/images/door-Red.png" th:src="@{/images/door-Red.png}" class="ui image" style="width: 20px">
+                                            </div>
+                                            <div th:case="1">
+                                                <img src="../static/images/door-Green.png" th:src="@{/images/door-Green.png}" class="ui image" style="width: 20px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="six wide column">
+                            <div class="ui red attached segment">
+                                <div class="ui grid">
+                                    <div class="thirteen wide column">
+                                        <h2 class="ui m-text-title-ori header">牵引系统状态</h2>
+                                    </div>
+                                    <div class="three wide column">
+                                        <img src="../static/images/qianyin.png" th:src="@{/images/qianyin.png}" class="ui rounded image" style="width: 20px">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!---静态页面显示 动态页面不显示--->
+                            <div class="ui segment">
+                                <div class="ui grid">
+                                    <div class="thirteen wide column">
+                                        <p class="ui right aligned">2 号车厢 1 牵引生命信号值： </p>
+                                    </div>
+                                    <div class="two wide column">
+                                        <h4 class="ui red header" th:text="${dcustate21}">3</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui segment">
+                                <div class="ui grid">
+                                    <div class="thirteen wide column">
+                                        <p class="ui right aligned">2 号车厢 2 牵引生命信号值： </p>
+                                    </div>
+                                    <div class="two wide column">
+                                        <h4 class="ui red header" th:text="${dcustate22}">3</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui segment">
+                                <div class="ui grid">
+                                    <div class="thirteen wide column">
+                                        <p class="ui right aligned">3 号车厢 1 牵引生命信号值： </p>
+                                    </div>
+                                    <div class="two wide column">
+                                        <h4 class="ui red header" th:text="${dcustate31}">3</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui segment">
+                                <div class="ui grid">
+                                    <div class="thirteen wide column">
+                                        <p class="ui right aligned">2 号车厢 2 牵引生命信号值： </p>
+                                    </div>
+                                    <div class="two wide column">
+                                        <h4 class="ui red header" th:text="${dcustate32}">3</h4>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ui segment">
+                    <div class="ui grid">
+                        <div class="five wide column">
+                            <div class="ui red attached segment">
+                                <div class="ui grid">
+                                    <div class="thirteen wide column">
+                                        <h2 class="ui m-text-title-ori header">制动系统状态</h2>
+                                    </div>
+                                    <div class="three wide column">
+                                        <img src="../static/images/zhidong.png" th:src="@{/images/zhidong.png}" class="ui rounded image" style="width: 20px">
+                                    </div>
+                                </div>
+                            </div>
+                            <!---静态页面显示 动态页面不显示--->
+                            <div class="ui segment">
+                                <div class="ui grid">
+                                    <div class="thirteen wide column">
+                                        <p class="ui right aligned">1 号车厢制动生命信号值：</p>
+                                    </div>
+                                    <div class="two wide column">
+                                        <h4 class="ui red header" th:text="${bcustate1}">3</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui segment">
+                                <div class="ui grid">
+                                    <div class="thirteen wide column">
+                                        <p class="ui right aligned">2号车厢制动生命信号值：</p>
+                                    </div>
+                                    <div class="two wide column">
+                                        <h4 class="ui red header" th:text="${bcustate2}">3</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="six wide column">
+                            <div class="ui red attached segment">
+                                <div class="ui grid">
+                                    <div class="thirteen wide column">
+                                        <h2 class="ui m-text-title-ori header">自控系统状态</h2>
+                                    </div>
+                                    <div class="three wide column">
+                                        <img src="../static/images/zidong.png" th:src="@{/images/zidong.png}" class="ui rounded image" style="width: 20px">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!---静态页面显示 动态页面不显示--->
+                            <div class="ui segment">
+                                <div class="ui grid">
+                                    <div class="thirteen wide column">
+                                        <p class="ui right aligned">1 号车厢自控系统生命信号值：</p>
+                                    </div>
+                                    <div class="two wide column">
+                                        <h4 class="ui red header" th:text="${atcstate}">3</h4>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="ui segment">
+                    <div class="ui grid">
+
+                        <div class="six wide column">
+                            <div class="ui red attached segment">
+                                <div class="ui grid">
+                                    <div class="thirteen wide column">
+                                        <h2 class="ui m-text-title-ori header">辅助逆变器状态</h2>
+                                    </div>
+                                    <div class="three wide column">
+                                        <img src="../static/images/nibianqi.png" th:src="@{/images/nibianqi.png}" class="ui rounded image" style="width: 20px">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!---静态页面显示 动态页面不显示--->
+                            <div class="ui segment">
+                                <div class="ui grid">
+                                    <div class="thirteen wide column">
+                                        <p class="ui right aligned">1 号车厢辅助逆变器生命信号值：</p>
+                                    </div>
+                                    <div class="three wide column">
+                                        <h4 class="ui red header" th:text="${sivstate}">3</h4>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="six wide column">
+                            <div class="ui red attached segment">
+                                <div class="ui grid">
+                                    <div class="thirteen wide column">
+                                        <h2 class="ui m-text-title-ori header">乘客信息系统状态</h2>
+                                    </div>
+                                    <div class="three wide column">
+                                        <img src="../static/images/message.png" th:src="@{/images/message.png}" class="ui rounded image" style="width: 20px">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!---静态页面显示 动态页面不显示--->
+                            <div class="ui segment">
+                                <div class="ui grid">
+                                    <div class="thirteen wide column">
+                                        <p class="ui right aligned">1 号车厢乘客信息系统生命信号值：</p>
+                                    </div>
+                                    <div class="three wide column">
+                                        <h4 class="ui red header" th:text="${pisstate}">3</h4>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!--底部-->
+    <!---将底部做统一模板，引入th:replace，每个页面底部完全一致--->
+    <footer class="ui inverted vertical segment m-padded-tb-large m-shadow-top-small">
+        <div class="ui center aligned container">
+            <!-----上方介绍----->
+            <div class="ui inverted divided stackable grid">
+                <div class="ui container">
+                    <h4 class="ui inverted header ">列车通信网络入侵检测仿真测试平台</h4>
+                    <p class="m-text-thin m-text-spaced m-opacity-small">1111111111111</p>
+                </div>
+            </div>
+            <!-----下方所有权----->
+            <div class="ui inverted section divider"></div>
+            <p class="m-text-thin m-text-spaced m-opacity-tiny">Copyright © 2020 - 2021 中车株洲电力机车. All Rights Reserved. </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+    <script src="../static/lib/prism/prism.js" th:src="@{/lib/prism/prism.js}"></script>
+    <script src="../static/lib/tocbot/tocbot.min.js" th:src="@{/lib/tocbot/tocbot.min.js}"></script>
+    <script src="../static/lib/qrcode/qrcode.min.js" th:src="@{/lib/qrcode/qrcode.min.js}"></script>
+    <script src="../static/lib/waypoints/jquery.waypoints.min.js" th:src="@{/lib/waypoints/jquery.waypoints.min.js}"></script>
+</div>
+
+</body>
+
+</html>

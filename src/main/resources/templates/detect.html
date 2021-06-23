@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<!---传入th:replace，取代原有head元素，即添加了th:href="@{/css/me.css}"等相关引用--->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>列车通信网络入侵检测仿真测试平台</title>
+    <!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">-->
+    <!--    &lt;!&ndash;-&#45;&#45;&#45;&#45;(若使用th:replace则不再需要添加)&#45;&#45;格式混乱，css未找到路径，原因是需thymeleaf引入&#45;&#45;th:href="@{/css/me.css}"-&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;-->
+    <!--    <link rel="stylesheet" href="../static/css/me.css" th:href="@{/css/me.css}"> &lt;!&ndash;(若使用th:replace则不再需要添加)th:href="@{/css/me.css}"&ndash;&gt;-->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/me.css"  th:href="@{/css/me.css}">
+    <link rel="stylesheet" href="../static/css/typo.css" th:href="@{/css/typo.css}">
+    <link rel="stylesheet" href="../static/css/animate.css" th:href="@{/css/animate.css}">
+    <link rel="stylesheet" href="../static/lib/prism/prism.css" th:href="@{/lib/prism/prism.css}">
+    <link rel="stylesheet" href="../static/lib/tocbot/tocbot.css" th:href="@{/lib/tocbot/tocbot.css}">
+</head>
+
+<body>
+<!--&lt;!&ndash; Sidebar Menu &ndash;&gt;-->
+<!--<div th:replace="_fragments :: sidebar(2)" class="ui vertical sidebar menu">-->
+<!--    &lt;!&ndash;-将导航做统一模板，引入th:classappend=" ${n==1} ? 'active' "判断是否需要添加active-&ndash;&gt;-->
+<!--    <a href="#" th:href="@{/}" class="active item"><i class="home icon"></i>Home</a>-->
+<!--    <a href="#" th:href="@{/blogs}" class="item"><i class="blogger b icon"></i>Blogs</a>-->
+<!--    <a href="#" th:href="@{/types/-1}" class="item" ><i class="tasks icon"></i>Types</a>-->
+<!--    <a href="#" th:href="@{/tags/-1}" class="item"><i class="tags icon"></i>Tags</a>-->
+<!--    <a href="#" th:href="@{/archives}" class="item"><i class="clone icon"></i>Archives</a>-->
+<!--    <a href="#" th:href="@{/aboutme}" class="item"><i class="user circle icon"></i>About</a>-->
+<!--</div>-->
+
+<div class="pusher m-background">
+    <!--导航-->
+    <!---将导航做统一模板，引入th:replace通过参数n区分不同active，此处为首页传入1--->
+    <nav class="ui inverted attached segment m-padded-tb-mini m-shadow-bottom-small">
+        <div class="ui container">
+            <div class="ui inverted secondary stackable menu ">
+                <h2 class="ui teal header item">列车通信网络入侵检测仿真测试平台</h2>
+            </div>
+        </div>
+        <a href="#" class="ui menu toggle black m-top-right m-pc-hide button">
+            <i class="sidebar icon"></i>
+        </a>
+    </nav>
+
+    <!--中间-->
+    <div class="ui container animated fadeIn m-padded-tb-massive">
+        <div class="ui divided stackable grid">
+
+            <!----左边管理---->
+            <div class="two wide column">
+                <!----左侧控制中心---->
+                <div class="ui segment">
+                    <div class="ui secondary segment">
+                        <h2 class="ui m-text-title-thin header">管理列表</h2>
+                    </div>
+                    <div class="ui attached segment">
+                        <a href="#" th:href="@{/states}" class="m-black m-text-thin">
+                            运行状态
+                        </a>
+                    </div>
+
+                    <div class="ui attached segment">
+                        <a href="#" th:href="@{/controller}" class="m-black m-text-thin">
+                            设备控制
+                        </a>
+                    </div>
+                    <div class="ui attached segment">
+                        <a href="#" th:href="@{/track}" class="m-black m-text-thin">
+                            攻击注入
+                        </a>
+                    </div>
+                    <div class="ui tertiary attached segment">
+                        <a href="#" th:href="@{/detect}" class="m-black m-text-thin">
+                            攻击检测
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <!----右边设备---->
+            <div class="fourteen wide column">
+                <div class="ui segment m-padded-tb-medium">
+                    <div class="ui two column grid">
+                        <div class="column">
+                            <h3 class="ui brown header">仿真平台设备攻击检测</h3>
+                        </div>
+                        <div class="right aligned column">
+                            共 <h4 class="ui orange header m-inline-block m-text-ori">7</h4> 个设备
+                        </div>
+                    </div>
+                </div>
+                <div class="ui segment">
+                    <div class="ui divided stackable grid">
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!--底部-->
+    <!---将底部做统一模板，引入th:replace，每个页面底部完全一致--->
+    <footer class="ui inverted vertical segment m-padded-tb-large m-shadow-top-small">
+        <div class="ui center aligned container">
+            <!-----上方介绍----->
+            <div class="ui inverted divided stackable grid">
+                <div class="ui container">
+                    <h4 class="ui inverted header ">列车通信网络入侵检测仿真测试平台</h4>
+                    <p class="m-text-thin m-text-spaced m-opacity-small">1111111111111</p>
+                </div>
+            </div>
+            <!-----下方所有权----->
+            <div class="ui inverted section divider"></div>
+            <p class="m-text-thin m-text-spaced m-opacity-tiny">Copyright © 2020 - 2021 中车株洲电力机车. All Rights Reserved. </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+    <script src="../static/lib/prism/prism.js" th:src="@{/lib/prism/prism.js}"></script>
+    <script src="../static/lib/tocbot/tocbot.min.js" th:src="@{/lib/tocbot/tocbot.min.js}"></script>
+    <script src="../static/lib/qrcode/qrcode.min.js" th:src="@{/lib/qrcode/qrcode.min.js}"></script>
+    <script src="../static/lib/waypoints/jquery.waypoints.min.js" th:src="@{/lib/waypoints/jquery.waypoints.min.js}"></script>
+</div>
+
+</body>
+
+</html>
