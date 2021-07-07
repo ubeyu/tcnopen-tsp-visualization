@@ -10,7 +10,8 @@
     <!--    &lt;!&ndash;-&#45;&#45;&#45;&#45;(若使用th:replace则不再需要添加)&#45;&#45;格式混乱，css未找到路径，原因是需thymeleaf引入&#45;&#45;th:href="@{/css/me.css}"-&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;-->
     <!--    <link rel="stylesheet" href="../static/css/me.css" th:href="@{/css/me.css}"> &lt;!&ndash;(若使用th:replace则不再需要添加)th:href="@{/css/me.css}"&ndash;&gt;-->
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">-->
+    <link rel="stylesheet" href="../static/css/semantic.min.css" th:href="@{/css/semantic.min.css}">
     <link rel="stylesheet" href="../static/css/me.css"  th:href="@{/css/me.css}">
     <link rel="stylesheet" href="../static/css/typo.css" th:href="@{/css/typo.css}">
     <link rel="stylesheet" href="../static/css/animate.css" th:href="@{/css/animate.css}">
@@ -71,11 +72,11 @@
                             攻击注入
                         </a>
                     </div>
-                    <div class="ui tertiary attached segment">
-                        <a href="#" th:href="@{/detect}" class="m-black m-text-thin">
-                            攻击检测
-                        </a>
-                    </div>
+<!--                    <div class="ui tertiary attached segment">-->
+<!--                        <a href="#" th:href="@{/detect}" class="m-black m-text-thin">-->
+<!--                            攻击检测-->
+<!--                        </a>-->
+<!--                    </div>-->
 
                 </div>
             </div>
@@ -119,9 +120,13 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+    <!--        <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>-->
+    <!--        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>-->
+    <!--        <script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>-->
+    <script src="../static/lib/jquery/jquery.min.js" th:src="@{/lib/jquery/jquery.min.js}"></script>
+    <script src="../static/lib/semantic/semantic.min.js" th:src="@{/lib/semantic/semantic.min.js}"></script>
+    <script src="../static/lib/jquery/jquery.scrollTo.min.js" th:src="@{/lib/jquery/jquery.scrollTo.min.js}"></script>
+
     <script src="../static/lib/prism/prism.js" th:src="@{/lib/prism/prism.js}"></script>
     <script src="../static/lib/tocbot/tocbot.min.js" th:src="@{/lib/tocbot/tocbot.min.js}"></script>
     <script src="../static/lib/qrcode/qrcode.min.js" th:src="@{/lib/qrcode/qrcode.min.js}"></script>

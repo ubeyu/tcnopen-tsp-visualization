@@ -1,5 +1,7 @@
 package com.tsp.service;
 
+import com.tsp.config.PathConfig;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +11,9 @@ public class LifeSignServiceImpl {
     public void updateLifeSignNum(int modifyline, int lifesign) throws FileNotFoundException {
         int count = 1;
         List<Integer> list = new ArrayList<>();
-        String pathname = "G:\\系统桌面\\中车\\代码\\tmp.txt";
+//        String pathname = "/home/pi/Desktop/tmp.txt";
+//        String pathname = "G:\\系统桌面\\中车\\代码\\tmp.txt";
+        String pathname = PathConfig.tmpPath;
         //读取文件
         try (FileReader reader = new FileReader(pathname);
              BufferedReader br = new BufferedReader(reader) // 建立一个对象，它把文件内容转成计算机能读懂的语言
@@ -23,6 +27,8 @@ public class LifeSignServiceImpl {
                 }
                 count++;
             }
+            reader.close();
+            br.close();
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -1,5 +1,7 @@
 package com.tsp.service;
 
+import com.tsp.config.PathConfig;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -9,7 +11,11 @@ import java.util.List;
 public class ReadStatesServiceImpl {
     public List<Integer> readStates(){
         List<Integer> list = new ArrayList<>();
-        String pathname = "G:\\系统桌面\\中车\\代码\\tmp.txt"; // 绝对路径或相对路径都可以，写入文件时演示相对路径,读取以上路径的input.txt文件
+//        String pathname = "/home/pi/Desktop/tmp.txt";
+//        String pathname = "/home/pi/Desktop/tmp.txt";
+//        String pathname = "G:\\系统桌面\\中车\\代码\\tmp.txt";
+        String pathname = PathConfig.tmpPath;
+        // 绝对路径或相对路径都可以，写入文件时演示相对路径,读取以上路径的input.txt文件
         //防止文件建立或读取失败，用catch捕捉错误并打印，也可以throw;
         //不关闭文件会导致资源的泄露，读写文件都同理
         //Java7的try-with-resources可以优雅关闭文件，异常时自动关闭文件；详细解读https://stackoverflow.com/a/12665271
@@ -20,6 +26,8 @@ public class ReadStatesServiceImpl {
             while ((line = br.readLine()) != null) {
                 list.add(Integer.parseInt(line));
             }
+            reader.close();
+            br.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
