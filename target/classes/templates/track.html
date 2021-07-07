@@ -10,7 +10,8 @@
     <!--    &lt;!&ndash;-&#45;&#45;&#45;&#45;(若使用th:replace则不再需要添加)&#45;&#45;格式混乱，css未找到路径，原因是需thymeleaf引入&#45;&#45;th:href="@{/css/me.css}"-&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;-->
     <!--    <link rel="stylesheet" href="../static/css/me.css" th:href="@{/css/me.css}"> &lt;!&ndash;(若使用th:replace则不再需要添加)th:href="@{/css/me.css}"&ndash;&gt;-->
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">-->
+    <link rel="stylesheet" href="../static/css/semantic.min.css" th:href="@{/css/semantic.min.css}">
     <link rel="stylesheet" href="../static/css/me.css"  th:href="@{/css/me.css}">
     <link rel="stylesheet" href="../static/css/typo.css" th:href="@{/css/typo.css}">
     <link rel="stylesheet" href="../static/css/animate.css" th:href="@{/css/animate.css}">
@@ -71,11 +72,11 @@
                             攻击注入
                         </a>
                     </div>
-                    <div class="ui attached segment">
-                        <a href="#" th:href="@{/detect}" class="m-black m-text-thin">
-                            攻击检测
-                        </a>
-                    </div>
+<!--                    <div class="ui attached segment">-->
+<!--                        <a href="#" th:href="@{/detect}" class="m-black m-text-thin">-->
+<!--                            攻击检测-->
+<!--                        </a>-->
+<!--                    </div>-->
 
                 </div>
             </div>
@@ -94,6 +95,34 @@
                 </div>
                 <div class="ui segment">
                     <div class="ui divided stackable grid">
+                        <div class="ui red attached segment">
+                            <div class="ui divided stackable grid">
+                                <div class="thirteen wide column">
+                                    <h2 class="ui m-text-title-ori header">发送TRDP异常报文给门控设备</h2>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!---静态页面显示 动态页面不显示--->
+                        <div class="seven wide column">
+                            <!--------method="post"表单以post方式提交----------->
+                            <!--------通过Thymeleaf中th:action与后台管理连接------将表单输入的用户名和密码提交给Controller---/dcustate21----->
+                            <form class="ui mini form" method="post" action="#" th:action="@{/edcuattack11}">
+                                <div class="ui segment">
+                                    <div class="field">
+                                        <div class="ui left input">
+                                            <input type="number" name="attacksign" placeholder="2">
+                                        </div>
+                                    </div>
+                                    <button class="ui fluid mini positive submit button">Send</button>
+                                </div>
+                                <!-------若为空 后台按照script会做出相应提示--------->
+                                <div class="ui mini error message"></div>
+                                <!-------增加自定义提示消息 使用Thymeleaf进行判断 非空 用户名或密码输入错误时 提示消息------->
+                                <div class="ui mini negative message" th:unless="${#strings.isEmpty(message)}" th:text="${message}">输入值超出范围</div>
+                            </form>
+                        </div>
+
 
                     </div>
                 </div>
@@ -119,9 +148,13 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+    <!--        <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>-->
+    <!--        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>-->
+    <!--        <script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>-->
+    <script src="../static/lib/jquery/jquery.min.js" th:src="@{/lib/jquery/jquery.min.js}"></script>
+    <script src="../static/lib/semantic/semantic.min.js" th:src="@{/lib/semantic/semantic.min.js}"></script>
+    <script src="../static/lib/jquery/jquery.scrollTo.min.js" th:src="@{/lib/jquery/jquery.scrollTo.min.js}"></script>
+
     <script src="../static/lib/prism/prism.js" th:src="@{/lib/prism/prism.js}"></script>
     <script src="../static/lib/tocbot/tocbot.min.js" th:src="@{/lib/tocbot/tocbot.min.js}"></script>
     <script src="../static/lib/qrcode/qrcode.min.js" th:src="@{/lib/qrcode/qrcode.min.js}"></script>

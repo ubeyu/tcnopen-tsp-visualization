@@ -27,3 +27,5 @@ logging:
     root: info
     com.why.home: debug
   file: log/whyhome-dev.log
+
+tmp.path: G:\\系统桌面\\中车\\代码\\tmp.txt
